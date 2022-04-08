@@ -1,0 +1,16 @@
+<h1>Blog Posts</h1>
+{% if post_list %}
+	<ul>
+		{% for post in post_list %}
+			<li>
+				<a href="{% url 'blog:view' post.id %}">{{ post.title }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No blog posts are available.</p>
+{% endif %}
+
+<form action="{% url 'blog:new' %}" method="GET">
+	<button type="submit">New</button>
+</form>

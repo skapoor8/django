@@ -1,0 +1,24 @@
+<h1>Create New Post</h1>
+
+{% for msg in error_messages %}
+	<ul>
+		<li><strong>{{ msg }}</strong></li>
+	</ul>
+{% endfor %}
+
+<form action="{% url 'blog:create' %}" method="post">
+	{% csrf_token %}
+
+	<label for="title">Title:</label>
+	<input type="text" id="post-title" name="title">
+
+	<br>
+
+	<label for="body">Body:</label>
+	<input type="textarea" id="post-body" name="body">
+
+	<br>
+
+	<input type="submit" value="Create">
+	<a href="{% url 'blog:index' %}">Cancel</a>
+</form>

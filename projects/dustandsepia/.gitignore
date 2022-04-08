@@ -1,0 +1,4 @@
+dns-virtualenv
+*.sqlite3
+*.pyc
+.env
